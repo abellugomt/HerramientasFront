@@ -1,5 +1,5 @@
 body{
-    background-image: url('background.jpg');
+    background-image: url('Background.png');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -74,6 +74,6 @@ button:hover{
 .titlePage{
     text-align: center;
     width: 100%;
-    color: #eee;
+    color: rgb(75, 13, 146);
 }
 

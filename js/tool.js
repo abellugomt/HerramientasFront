@@ -4,30 +4,30 @@ const host = '129.158.60.253';
 //const host = 'localhost';
 
 //*******   *******    *******  *******/ 
-//*******    CRUD  ORTOPEDIC     *******/ 
+//*******    CRUD  TOOL     *******/ 
 //*******   *******    *******  *******/ 
 
-function onOrtopedicSubmit(e) {
+function onToolSubmit(e) {
 	event.preventDefault();
-        const formData = readFormOrtopedicData();
-        createOrtopedic(formData);
-        resetFormOrtopedic();    
+        const formData = readFormToolData();
+        createTool(formData);
+        resetFormTool();    
 }
 
 //Retrieve the data
-function readFormOrtopedicData() {
+function readFormToolData() {
     var formData = {};
-    formData["id"] = document.getElementById("ortopedicId").value;
-    formData["name"] = document.getElementById("ortopedicName").value;
-    formData["brand"] = document.getElementById("ortopedicBrand").value;
-    formData["year"] = parseInt(document.getElementById("ortopedicYear").value) ;
-    formData["description"] = document.getElementById("ortopedicDescription").value;
-    formData["category"] = {"id": parseInt(document.getElementById("ortopedicCategory").value)};
+    formData["id"] = document.getElementById("toolId").value;
+    formData["name"] = document.getElementById("toolName").value;
+    formData["brand"] = document.getElementById("toolBrand").value;
+    formData["year"] = parseInt(document.getElementById("toolYear").value) ;
+    formData["description"] = document.getElementById("toolDescription").value;
+    formData["category"] = {"id": parseInt(document.getElementById("toolCategory").value)};
     return formData;
 }
 
-function createOrtopedic(data){
-    const url = `http://${host}:8080/api/Ortopedic/save`;
+function createTool(data){
+    const url = `http://${host}:8080/api/Tool/save`;
 
     $.ajax({
         url : url,
@@ -51,11 +51,11 @@ function createOrtopedic(data){
     })
 }
 //Load data
-function loadOrtopedicData(){
-    const table = document.getElementById("ortopedicList").getElementsByTagName('tbody')[0];
+function loadToolData(){
+    const table = document.getElementById("toolList").getElementsByTagName('tbody')[0];
 
     $.ajax({
-        url : `http://${host}:8080/api/Ortopedic/all`,
+        url : `http://${host}:8080/api/Tool/all`,
         data : null,
         headers: {  
             'Access-Control-Allow-Origin': true
@@ -79,7 +79,7 @@ function loadOrtopedicData(){
                 cell6 = newRow.insertCell(5);
                     cell6.innerHTML = item.category.id;
                 cell7 = newRow.insertCell(6);
-                cell7.innerHTML = `<button onClick="ortopedicSelect(this)">Select</button> <button onClick="ortopedicDelete(this,${item.id})">Delete</button>`;   
+                cell7.innerHTML = `<button onClick="toolSelect(this)">Select</button> <button onClick="toolDelete(this,${item.id})">Delete</button>`;   
             })
         },
         error: function(error) {
@@ -92,23 +92,23 @@ function loadOrtopedicData(){
     }) 
 }
 
-loadOrtopedicData();
+loadToolData();
 //Insert the data
 
 
 //Edit the data
-function ortopedicSelect(td) {
+function toolSelect(td) {
     selectedRow = td.parentElement.parentElement;
-    document.getElementById("ortopedicId").value = selectedRow.cells[0].innerHTML;
-    document.getElementById("ortopedicName").value = selectedRow.cells[1].innerHTML;
-    document.getElementById("ortopedicBrand").value = selectedRow.cells[2].innerHTML;
-    document.getElementById("ortopedicYear").value = selectedRow.cells[3].innerHTML;
-    document.getElementById("ortopedicDescription").value = selectedRow.cells[4].innerHTML;
-    document.getElementById("ortopedicCategory").value = selectedRow.cells[5].innerHTML;
+    document.getElementById("toolId").value = selectedRow.cells[0].innerHTML;
+    document.getElementById("toolName").value = selectedRow.cells[1].innerHTML;
+    document.getElementById("toolBrand").value = selectedRow.cells[2].innerHTML;
+    document.getElementById("toolYear").value = selectedRow.cells[3].innerHTML;
+    document.getElementById("toolDescription").value = selectedRow.cells[4].innerHTML;
+    document.getElementById("toolCategory").value = selectedRow.cells[5].innerHTML;
 }
-function ortopedicUpdate() {
-    const url = `http://${host}:8080/api/Ortopedic/update`;
-    const formData = readFormOrtopedicData();
+function toolUpdate() {
+    const url = `http://${host}:8080/api/Tool/update`;
+    const formData = readFormToolData();
     console.log('formData ->', formData)
     const data = {name: formData.name, brand: formData.brand, year: formData.year, description: formData.description, id: formData.id}
     $.ajax({
@@ -134,9 +134,9 @@ function ortopedicUpdate() {
 }
 
 //Delete the data
-function ortopedicDelete(td, id) {
+function toolDelete(td, id) {
     $.ajax({
-        url : `http://${host}:8080/api/Ortopedic/${id}`,
+        url : `http://${host}:8080/api/Tool/${id}`,
         data : null,
         type : "DELETE", //POST, PUT, DELETE,
         dataType : 'json',
@@ -157,18 +157,18 @@ function ortopedicDelete(td, id) {
     })
     if (confirm('Do you want to delete this record?')) {
         row = td.parentElement.parentElement;
-        document.getElementById('ortopedicList').deleteRow(row.rowIndex);
-        resetFormOrtopedic();
+        document.getElementById('toolList').deleteRow(row.rowIndex);
+        resetFormTool();
     }
 }
 
 //Reset the data
-function resetFormOrtopedic() {
-    document.getElementById("ortopedicId").value = '';
-    document.getElementById("ortopedicName").value = '';
-    document.getElementById("ortopedicBrand").value = '';
-    document.getElementById("ortopedicYear").value = '';
-    document.getElementById("ortopedicDescription").value = '';
-    document.getElementById("ortopedicCategory").value = '';
+function resetFormTool() {
+    document.getElementById("toolId").value = '';
+    document.getElementById("toolName").value = '';
+    document.getElementById("toolBrand").value = '';
+    document.getElementById("toolYear").value = '';
+    document.getElementById("toolDescription").value = '';
+    document.getElementById("toolCategory").value = '';
     selectedRow = null;
 }
