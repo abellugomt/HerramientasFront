@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<head>
+    <title>OPERACIONES CRUD</title>
+    <link type="text/css" rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <h1 class="titlePage">
+        GESTION FARM
+    </h1>
+    <table>
+        <tr>
+            <td>
+                <form autocomplete="off" onsubmit="onFarmSubmit()">
+                    <div>
+                        <label for="farmId">Id</label>
+                        <p></p>
+                        <input type="text" name="farmId" id="farmId">
+                    </div>
+                    <div>
+                        <label for="farmName">Name</label>
+                        <input type="text" name="farmName" id="farmName">
+                    </div>
+                    <div>
+                        <label for="farmAddress">Address</label>
+                        <input type="text" name="farmAddress" id="farmAddress">
+                    </div>
+                    <div>
+                        <label for="farmExtension">Extension</label>
+                        <input type="text" name="farmExtension" id="farmExtension">
+                    </div>
+                    <div>
+                        <label for="farmDescription">Description</label>
+                        <input type="text" name="farmDescription" id="farmDescription">
+                    </div>
+                    <div>
+                        <label for="farmCategoryId">CategoryId</label>
+                        <input type="text" name="farmCategoryId" id="farmCategoryId">
+                    </div>
+
+                    <div class="form_action--button">
+                        <input type="submit" value="Create">
+                    </div>
+                </form>
+                <button onClick="farmUpdate(this)">Edit</button> 
+                <td>
+                    <table class="list" id="farmList">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Name</th>
+                                <th>Address</th>
+                                <th>Extension</th>
+                                <th>Description</th>
+                                <th>CategoryId</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </td>
+            </td>
+        </tr>
+    </table>
+    <div>
+        <h4 class="titlePage">
+            <a href="/client.html">GESTION CLIENTES</a>
+        </h4>
+        <h4 class="titlePage">
+            <a href="/tool.html">GESTION HERRAMIENTAS</a>
+        </h4>
+        <h4 class="titlePage">
+            <a href="/messages.html">GESTION MENSAJES</a>
+        </h4>
+        <h4 class="titlePage">
+            <a href="/reservation.html">GESTION RESERVACIONES</a>
+        </h4>
+        <h4 class="titlePage">
+            <a href="/index.html">GESTION CATEGORY</a>
+        </h4>
+        <h4 class="titlePage">
+            <a href="/index.html">GESTION FARM</a>
+        </h4>
+    </div>
+    <script type="text/javascript" src="./js/farm.js"></script>
+</body>
+</html>

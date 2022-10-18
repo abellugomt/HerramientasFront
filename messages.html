@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<head>
+    <title>Crud Operation</title>
+    <link type="text/css" rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <h1 class="titlePage">
+        GESTION MENSAJES
+    </h1>
+    <table>
+        <tr>
+            <td>
+                <form autocomplete="off" onsubmit="onMessageSubmit()">
+                    <div>
+                        <label for="messageId">Id</label>
+                        <p></p>
+                        <input type="text" name="messageId" id="messageId">
+                    </div>
+                    <div>
+                        <label for="messageText">MessageText</label>
+                        <input type="text" name="messageText" id="messageText">
+                    </div>
+                    <div>
+                        <label for="messageClientId">ClientId</label>
+                        <input type="text" name="messageClientId" id="messageClientId">
+                    </div>
+                    <div>
+                        <label for="messageToolId">ToolId</label>
+                        <input type="text" name="messageToolId" id="messageToolId">
+                    </div>
+
+                    <div class="form_action--button">
+                        <input type="submit" value="Create">
+                    </div>
+                </form>
+                <button onClick="messageUpdate(this)">Edit</button> 
+                <td>
+                    <table class="list" id="messageList">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>MessageText</th>
+                                <th>ClientId</th>
+                                <th>ToolId</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </td>
+            </td>
+        </tr>
+    </table>
+    <div>
+        <h4 class="titlePage">
+            <a href="/client.html">GESTION CLIENTES</a>
+        </h4>
+        <h4 class="titlePage">
+            <a href="/tool.html">GESTION HERRAMIENTAS</a>
+        </h4>
+        <h4 class="titlePage">
+            <a href="/messages.html">GESTION MENSAJES</a>
+        </h4>
+        <h4 class="titlePage">
+            <a href="/reservation.html">GESTION RESERVACIONES</a>
+        </h4>
+        <h4 class="titlePage">
+            <a href="/index.html">GESTION CATEGORY</a>
+        </h4>
+    </div>
+    <script type="text/javascript" src="./js/message.js"></script>
+</body>
+</html>

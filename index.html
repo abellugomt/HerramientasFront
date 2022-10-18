@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<head>
+    <title>OPERACIONES CRUD</title>
+    <link type="text/css" rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <h1 class="titlePage">
+        GESTION CATEGORIAS
+    </h1>
+    <table>
+        <tr>
+            <td>
+                <form autocomplete="off" onsubmit="onCategorySubmit()">
+                    <div>
+                        <label for="categoryId">Id</label>
+                        <p></p>
+                        <input type="text" name="categoryId" id="categoryId">
+                    </div>
+                    <div>
+                        <label for="categoryName">Name</label>
+                        <input type="text" name="categoryName" id="categoryName">
+                    </div>
+                    <div>
+                        <label for="categoryDescription">Description</label>
+                        <input type="text" name="categoryDescription" id="categoryDescription">
+                    </div>
+
+                    <div class="form_action--button">
+                        <input type="submit" value="Create">
+                    </div>
+                </form>
+                <button onClick="categoryUpdate(this)">Edit</button> 
+                <td>
+                    <table class="list" id="categoryList">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Name</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </td>
+            </td>
+        </tr>
+    </table>
+    <div>
+        <h4 class="titlePage">
+            <a href="/client.html">GESTION CLIENTES</a>
+        </h4>
+        <h4 class="titlePage">
+            <a href="/tool.html">GESTION HERRAMIENTAS</a>
+        </h4>
+        <h4 class="titlePage">
+            <a href="/messages.html">GESTION MENSAJES</a>
+        </h4>
+        <h4 class="titlePage">
+            <a href="/reservation.html">GESTION RESERVACIONES</a>
+        </h4>
+        <h4 class="titlePage">
+            <a href="/index.html">GESTION CATEGORY</a>
+        </h4>
+        <h4 class="titlePage">
+            <a href="/farm.html">GESTION FARM</a>
+        </h4>
+    </div>
+    <script type="text/javascript" src="./js/category.js"></script>
+</body>
+</html>

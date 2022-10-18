@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<head>
+    <title>Crud Operation</title>
+    <link type="text/css" rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <h1 class="titlePage">
+        GESTION RESERVACIONES
+    </h1>
+    <table>
+        <tr>
+            <td>
+                <form autocomplete="off" onsubmit="onReservationSubmit()">
+                    <div>
+                        <label for="reservationId">Id</label>
+                        <p></p>
+                        <input type="text" name="reservationId" id="reservationId">
+                    </div>
+                    <div>
+                        <label for="reservationStartDate">StartDate</label>
+                        <input type="text" name="reservationStartDate" id="reservationStartDate">
+                    </div>
+                    <div>
+                        <label for="reservationDevolutionDate">DevolutionDate</label>
+                        <input type="text" name="reservationDevolutionDate" id="reservationDevolutionDate">
+                    </div>
+                    <div>
+                        <label for="reservationClientId">ClientId</label>
+                        <input type="text" name="reservationClientId" id="reservationClientId">
+                    </div>
+                    <div>
+                        <label for="reservationToolId">ToolId</label>
+                        <input type="text" name="reservationToolId" id="reservationToolId">
+                    </div>
+
+                    <div class="form_action--button">
+                        <input type="submit" value="Create">
+                    </div>
+                </form>
+                <button onClick="reservationUpdate(this)">Edit</button> 
+                <td>
+                    <table class="list" id="reservationList">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>StartDate</th>
+                                <th>DevolutionDate</th>
+                                <th>ClientId</th>
+                                <th>ToolId</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </td>
+            </td>
+        </tr>
+    </table>
+    <div>
+        <h4 class="titlePage">
+            <a href="/client.html">GESTION CLIENTES</a>
+        </h4>
+        <h4 class="titlePage">
+            <a href="/tool.html">GESTION HERRAMIENTAS</a>
+        </h4>
+        <h4 class="titlePage">
+            <a href="/messages.html">GESTION MENSAJES</a>
+        </h4>
+        <h4 class="titlePage">
+            <a href="/reservation.html">GESTION RESERVACIONES</a>
+        </h4>
+        <h4 class="titlePage">
+            <a href="/index.html">GESTION CATEGORY</a>
+        </h4>
+    </div>
+    <script type="text/javascript" src="./js/reservation.js"></script>
+</body>
+</html>

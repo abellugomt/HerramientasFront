@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<head>
+    <title>Crud Operation</title>
+    <link type="text/css" rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <h1 class="titlePage">
+        GESTION CLIENTES
+    </h1>
+    <table>
+        <tr>
+            <td>
+                <form autocomplete="off" onsubmit="onClientSubmit()">
+                    <div>
+                        <label for="clientId">Id</label>
+                        <p></p>
+                        <input type="text" name="clientId" id="clientId">
+                    </div>
+                    <div>
+                        <label for="clientName">Name</label>
+                        <input type="text" name="clientName" id="clientName">
+                    </div>
+                    <div>
+                        <label for="clientEmail">Email</label>
+                        <input type="text" name="clientEmail" id="clientEmail">
+                    </div>
+                    <div>
+                        <label for="clientAge">Age</label>
+                        <input type="text" name="clientAge" id="clientAge">
+                    </div>
+                    <div>
+                        <label for="clientPassword">Password</label>
+                        <input type="text" name="clientPassword" id="clientPassword">
+                    </div>
+
+                    <div class="form_action--button">
+                        <input type="submit" value="Create">
+                    </div>
+                </form>
+                <button onClick="clientUpdate(this)">Edit</button> 
+                <td>
+                    <table class="list" id="clientList">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Age</th>
+                                <th>Password</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </td>
+            </td>
+        </tr>
+    </table>
+    <div>
+        <h4 class="titlePage">
+            <a href="/client.html">GESTION CLIENTES</a>
+        </h4>
+        <h4 class="titlePage">
+            <a href="/tool.html">GESTION HERRAMIENTAS</a>
+        </h4>
+        <h4 class="titlePage">
+            <a href="/messages.html">GESTION MENSAJES</a>
+        </h4>
+        <h4 class="titlePage">
+            <a href="/reservation.html">GESTION RESERVACIONES</a>
+        </h4>
+        <h4 class="titlePage">
+            <a href="/index.html">GESTION CATEGORY</a>
+        </h4>
+    </div>
+    <script type="text/javascript" src="./js/client.js"></script>
+</body>
+</html>

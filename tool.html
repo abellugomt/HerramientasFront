@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<head>
+    <title>Crud Operation</title>
+    <link type="text/css" rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <h1 class="titlePage">
+        GESTION HERRAMIENTAS
+    </h1>
+    <table>
+        <tr>
+            <td>
+                <form autocomplete="off" onsubmit="onToolSubmit()">
+                    <div>
+                        <label for="ToolId">Id</label>
+                        <p></p>
+                        <input type="text" name="ToolId" id="ToolId">
+                    </div>
+                    <div>
+                        <label for="ToolName">Name</label>
+                        <input type="text" name="ToolName" id="ToolName">
+                    </div>
+                    <div>
+                        <label for="ToolBrand">Brand</label>
+                        <input type="text" name="ToolBrand" id="ToolBrand">
+                    </div>
+                    <div>
+                        <label for="ToolYear">Year</label>
+                        <input type="text" name="ToolYear" id="ToolYear">
+                    </div>
+                    <div>
+                        <label for="ToolDescription">Description</label>
+                        <input type="text" name="ToolDescription" id="ToolDescription">
+                    </div>
+                    <div>
+                        <label for="ToolCategory">Category</label>
+                        <input type="text" name="ToolCategory" id="ToolCategory">
+                    </div>
+
+                    <div class="form_action--button">
+                        <input type="submit" value="Create">
+                    </div>
+                </form>
+                <button onClick="ToolUpdate(this)">Edit</button> 
+                <td>
+                    <table class="list" id="ToolList">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Brand</th>
+                                <th>Model</th>
+                                <th>Category</th>
+                                <th>Name</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </td>
+            </td>
+        </tr>
+    </table>
+    <div>
+        <h4 class="titlePage">
+            <a href="/client.html">GESTION CLIENTES</a>
+        </h4>
+        <h4 class="titlePage">
+            <a href="/Tool.html">GESTION HERRAMIENTAS</a>
+        </h4>
+        <h4 class="titlePage">
+            <a href="/messages.html">GESTION MENSAJES</a>
+        </h4>
+        <h4 class="titlePage">
+            <a href="/reservation.html">GESTION RESERVACIONES</a>
+        </h4>
+        <h4 class="titlePage">
+            <a href="/index.html">GESTION CATEGORY</a>
+        </h4>
+    </div>
+    <script type="text/javascript" src="./js/Tool.js"></script>
+</body>
+</html>
